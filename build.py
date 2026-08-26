@@ -59,7 +59,7 @@ PEOPLE = [
         affil="Project Lead, AI for Cities",
         affil2="Systems Engineering · Cornell Duffield Engineering",
         bio=[
-           "Winston Yap is an Ezra Systems Postdoctoral Associate at Cornell University and Overseas Postdoctoral Fellow at the Singapore Management University, College of Integrative Studies. His research combines urban analytics, systems thinking, and artificial intelligence to model cities as complex systems and support sustainable urban planning and design."
+           "Winston Yap is an Ezra Systems Postdoctoral Associate at Cornell University and Overseas Postdoctoral Fellow at the Singapore Management University, College of Integrative Studies. His research combines urban analytics, systems thinking, and artificial intelligence to model cities as complex systems and support sustainable urban planning and design.",
            "He holds a doctorate in urban analytics from the National University of Singapore. His work has been published in leading urban science journals including Nature Health, Nature Sustainability, npj Urban Sustainability, and Computers, Environment and Urban Systems. He was awarded the Singapore Data Science Consortium Dissertation Fellowship, and his research on population health has been featured by MIT News. His work is informed by interdisciplinary experiences spanning academia, industry, and urban practice, including applied urban research at the Lee Kuan Yew Centre for Innovative Cities, industry experience as a machine learning engineer at a self-driving car startup in Nagoya (Japan), and a visiting scholarship at the MIT Senseable City Lab (Boston)."
           ,
         ],

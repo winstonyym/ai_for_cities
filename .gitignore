@@ -5,3 +5,8 @@
 # /people
 /_to_delete
 WEBSITE.md
+
+# never ship build artefacts to Pages — node_modules/.bin holds symlinks,
+# a classic GitHub Pages build failure
+node_modules/
+.DS_Store
