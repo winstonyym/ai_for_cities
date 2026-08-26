@@ -1,0 +1,3 @@
+my name is Andrew! I'm a first-year student in the College of Engineering, and I hope to major in electrical and computer engineering.
+I'm from Acton, Massachusetts. In the past, I've done work analyzing air pollution data measurements from NASA's TEMPO satellite as well as volunteering for my school's environmental activism club.
+I'm really excited to learn more about creating digital twins, which I believe will be crucial to modeling a sustainable environment for physical AI.

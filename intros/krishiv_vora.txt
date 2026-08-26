@@ -1,0 +1,5 @@
+I'm Krishiv! I'm an M.Eng CS student starting this fall, focusing on using AI in various domain-specific applications, which is what drew me to this project.
+
+Before coming to Cornell, I did my undergrad at UC San Diego where I studied Cognitive Science with a specialization in Machine Learning. After graduating I spent 3 years at AMD building software infrastructure and tooling for GPU hardware simulations, where I often used AI-driven workflows and agentic automation.
+
+Excited to learn more about the project and use computation and AI to build real solutions with everyone

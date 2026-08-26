@@ -1,0 +1,2122 @@
+{
+ "nodes": [
+  {
+   "label": "Urban greenery (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "availability_of_urban_greenery_1783690972981",
+   "x": 738.27,
+   "y": 1430.07
+  },
+  {
+   "label": "Population density",
+   "subsystem": "Social",
+   "description": "",
+   "id": "population_density_1783691363491",
+   "x": -436.25,
+   "y": 538.52
+  },
+  {
+   "label": "Number of Trees",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "number_of_trees_1783691403332",
+   "x": 666.35,
+   "y": 1683.23
+  },
+  {
+   "label": "Building shadow",
+   "subsystem": "Infrastructure",
+   "description": "Total accrued shadow. In New York this is dominated by building shadow: it correlates -0.39 with canopy cover and -0.48 with open space, peaking in street canyons with neither. Formerly drawn as 'Urban shading' fed by trees and canopy, which did not describe this measurement.",
+   "id": "urban_shading_1783691476995",
+   "x": 271.95,
+   "y": 1217.33
+  },
+  {
+   "label": "Urban heat island (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "urban_heat_island_1783691669581",
+   "x": 565.42,
+   "y": 1124.61
+  },
+  {
+   "label": "Roof albedo",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "roof_albedo_1783971375925",
+   "x": 386.49,
+   "y": 1253.12
+  },
+  {
+   "label": "Heat vulnerability",
+   "subsystem": "Health",
+   "description": "",
+   "id": "population_vulnerability_1783971475568",
+   "x": 553.37,
+   "y": 595.38
+  },
+  {
+   "label": "Built-up density",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "builtup_density_1783972052437",
+   "x": 405.16,
+   "y": 1381.45
+  },
+  {
+   "label": "Availability of AC",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "residential_ac_1783972390698",
+   "x": -364.19,
+   "y": 33.06
+  },
+  {
+   "label": "Open and green spaces",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "urban_green_space_1783975679485",
+   "x": 508.8,
+   "y": 1575.85
+  },
+  {
+   "label": "Canopy cover",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "canopy_cover_1783976122542",
+   "x": 851.62,
+   "y": 1660.19
+  },
+  {
+   "label": "Pedestrian flow",
+   "subsystem": "Transportation",
+   "description": "",
+   "id": "travel_demand_1783977131621",
+   "x": -301.28,
+   "y": 638.81
+  },
+  {
+   "label": "Urban services",
+   "subsystem": "Economy",
+   "description": "",
+   "id": "urban_services_1783977147881",
+   "x": -370.08,
+   "y": 438.42
+  },
+  {
+   "label": "Cooling adaptation (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "outdoor_cooling_amenities_1783977662140",
+   "x": -66.34,
+   "y": 60.77
+  },
+  {
+   "label": "Distance to cooling showers",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_showers_1784135645729",
+   "x": -317.87,
+   "y": -84.56
+  },
+  {
+   "label": "Distance to cooling fountains",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_fountains_1784135670746",
+   "x": -306.66,
+   "y": 153.53
+  },
+  {
+   "label": "Land surface temperature",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "outdoor_air_temperature_1784135714029",
+   "x": 777.31,
+   "y": 1235.35
+  },
+  {
+   "label": "Aged population",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "age_1784139208967",
+   "x": 1134.63,
+   "y": -9.66
+  },
+  {
+   "label": "Obesity",
+   "subsystem": "Health",
+   "description": "",
+   "id": "obesity_1784144593189",
+   "x": 649.43,
+   "y": -355.96
+  },
+  {
+   "label": "Diabetes",
+   "subsystem": "Health",
+   "description": "",
+   "id": "diabetes_1784144610360",
+   "x": 1005.25,
+   "y": -63.03
+  },
+  {
+   "label": "Depression",
+   "subsystem": "Health",
+   "description": "",
+   "id": "mental_distress_1784144798177",
+   "x": 493.77,
+   "y": -284.87
+  },
+  {
+   "label": "Arthritis",
+   "subsystem": "Health",
+   "description": "",
+   "id": "arthritis_1784144884850",
+   "x": 932.61,
+   "y": -358.47
+  },
+  {
+   "label": "Social isolation",
+   "subsystem": "Social",
+   "description": "",
+   "id": "social_isolation_1784145027768",
+   "x": 7.38,
+   "y": -363.01
+  },
+  {
+   "label": "Smoking",
+   "subsystem": "Health",
+   "description": "",
+   "id": "smoking_1784145054055",
+   "x": 1143.36,
+   "y": -183.1
+  },
+  {
+   "label": "Binge drinking",
+   "subsystem": "Health",
+   "description": "",
+   "id": "binge_drinking_1784145064780",
+   "x": 727.25,
+   "y": -501.75
+  },
+  {
+   "label": "Asthma",
+   "subsystem": "Health",
+   "description": "",
+   "id": "asthma_1784146206133",
+   "x": 1043.14,
+   "y": -405.18
+  },
+  {
+   "label": "High blood pressure",
+   "subsystem": "Health",
+   "description": "",
+   "id": "high_blood_pressure_1784146238633",
+   "x": 622.58,
+   "y": -2.53
+  },
+  {
+   "label": "High cholesterol",
+   "subsystem": "Health",
+   "description": "",
+   "id": "high_cholesterol_1784146261641",
+   "x": 769.26,
+   "y": -349.35
+  },
+  {
+   "label": "COPD",
+   "subsystem": "Health",
+   "description": "",
+   "id": "copd_1784146295982",
+   "x": 895.81,
+   "y": -5.29
+  },
+  {
+   "label": "Heart disease",
+   "subsystem": "Health",
+   "description": "",
+   "id": "heart_disease_1784146425621",
+   "x": 902.47,
+   "y": -125.05
+  },
+  {
+   "label": "Stroke",
+   "subsystem": "Health",
+   "description": "",
+   "id": "stroke_1784146459095",
+   "x": 856.44,
+   "y": -265.76
+  },
+  {
+   "label": "Short sleep duration",
+   "subsystem": "Health",
+   "description": "",
+   "id": "short_sleep_duration_1784146681104",
+   "x": 780.9,
+   "y": -82.57
+  },
+  {
+   "label": "Physical Disabilities",
+   "subsystem": "Health",
+   "description": "",
+   "id": "disability_1784147651024",
+   "x": 460.06,
+   "y": -429.82
+  },
+  {
+   "label": "Utilities insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "utilities_threat_1784147785218",
+   "x": 1273.91,
+   "y": 358.72
+  },
+  {
+   "label": "Food insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "food_insecurity_1784147824522",
+   "x": 1102.81,
+   "y": 539.62
+  },
+  {
+   "label": "Housing insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "housing_insecurity_1784147837698",
+   "x": 1264.48,
+   "y": 478.34
+  },
+  {
+   "label": "Transport inaccessibility",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "lack_of_transport_access_1784147873769",
+   "x": 1051.6,
+   "y": 653.25
+  },
+  {
+   "label": "Overcrowding",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "overcrowding_1784147903969",
+   "x": 790.65,
+   "y": 530.05
+  },
+  {
+   "label": "Poverty",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "persons_living_below_poverty_line_1784148138406",
+   "x": 1047.22,
+   "y": 72.52
+  },
+  {
+   "label": "Unemployment",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "unemployment_1784148264572",
+   "x": 917.9,
+   "y": 618.87
+  },
+  {
+   "label": "Physiological vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "physical_distress_1784157119521",
+   "x": 680.09,
+   "y": -165.61
+  },
+  {
+   "label": "Social vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "social_determinants_of_health_1784157194812",
+   "x": 965.45,
+   "y": 349.48
+  },
+  {
+   "label": "Distance to cooling sites",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_sites_1784852908319",
+   "x": -219.01,
+   "y": -171.6
+  },
+  {
+   "label": "Psychological vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "psychological_vulnerability_c_1784852956727",
+   "x": 202.73,
+   "y": -141.15
+  },
+  {
+   "label": "Human co-location (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "human_colocation_c_1784853411566",
+   "x": -116.22,
+   "y": 406.63
+  },
+  {
+   "label": "Cancer",
+   "subsystem": "Health",
+   "description": "",
+   "id": "cancer_1784855214074",
+   "x": 974.63,
+   "y": -220.96
+  },
+  {
+   "label": "Median income",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "median_income_1785006491072",
+   "x": 932.85,
+   "y": 108.84
+  },
+  {
+   "label": "Young children",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "young_children_1785006681071",
+   "x": 1211.42,
+   "y": 590.64
+  },
+  {
+   "label": "Air pollution (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "air_quality_c_1785013070233",
+   "x": 283.02,
+   "y": 745.04
+  },
+  {
+   "label": "PM2.5",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "pm25_1785013100042",
+   "x": 35,
+   "y": 876.31
+  },
+  {
+   "label": "NO2",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "no2_1785013145334",
+   "x": 430.64,
+   "y": 925.2
+  },
+  {
+   "label": "Heat emergency",
+   "subsystem": "Health",
+   "description": "",
+   "id": "heat_emergency_1785298152221",
+   "x": 280.33,
+   "y": 158.14
+  },
+  {
+   "label": "Canopy height",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "canopy_height_1785373909757",
+   "x": 951.64,
+   "y": 1555.75
+  },
+  {
+   "label": "Median age",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "median_age_1785373973261",
+   "x": 1218.62,
+   "y": 184.19
+  }
+ ],
+ "links": [
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "lack_of_transport_access_1784147873769",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "disability_1784147651024",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "builtup_density_1783972052437",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "canopy_cover_1783976122542",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "asthma_1784146206133",
+   "target": "mental_distress_1784144798177",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "asthma_1784146206133",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "roof_albedo_1783971375925",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "no2_1785013145334",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "no2_1785013145334",
+   "target": "availability_of_cooling_showers_1784135645729",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "high_blood_pressure_1784146238633",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "high_blood_pressure_1784146238633",
+   "target": "arthritis_1784144884850",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "high_blood_pressure_1784146238633",
+   "target": "binge_drinking_1784145064780",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "cancer_1784855214074",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "cancer_1784855214074",
+   "target": "arthritis_1784144884850",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "builtup_density_1783972052437",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "builtup_density_1783972052437",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "mental_distress_1784144798177",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "smoking_1784145054055",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "cancer_1784855214074",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "young_children_1785006681071",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "median_age_1785373973261",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "utilities_threat_1784147785218",
+   "target": "lack_of_transport_access_1784147873769",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "utilities_threat_1784147785218",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "population_vulnerability_1783971475568",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "population_vulnerability_1783971475568",
+   "target": "availability_of_cooling_sites_1784852908319",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "canopy_cover_1783976122542",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "urban_green_space_1783975679485",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "roof_albedo_1783971375925",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "both"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "travel_demand_1783977131621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "heart_disease_1784146425621",
+   "target": "copd_1784146295982",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "heart_disease_1784146425621",
+   "target": "arthritis_1784144884850",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "heart_disease_1784146425621",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "young_children_1785006681071",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "young_children_1785006681071",
+   "target": "smoking_1784145054055",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "mental_distress_1784144798177",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "diabetes_1784144610360",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "diabetes_1784144610360",
+   "target": "binge_drinking_1784145064780",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "unemployment_1784148264572",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "unemployment_1784148264572",
+   "target": "persons_living_below_poverty_line_1784148138406",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "urban_shading_1783691476995",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "population_density_1783691363491",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "canopy_cover_1783976122542",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "availability_of_cooling_fountains_1784135670746",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "high_cholesterol_1784146261641",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "high_cholesterol_1784146261641",
+   "target": "heart_disease_1784146425621",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "housing_insecurity_1784147837698",
+   "target": "food_insecurity_1784147824522",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "housing_insecurity_1784147837698",
+   "target": "utilities_threat_1784147785218",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "housing_insecurity_1784147837698",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "young_children_1785006681071",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "median_age_1785373973261",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "smoking_1784145054055",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "urban_services_1783977147881",
+   "target": "travel_demand_1783977131621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "urban_services_1783977147881",
+   "target": "population_density_1783691363491",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "urban_services_1783977147881",
+   "target": "roof_albedo_1783971375925",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "urban_services_1783977147881",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "residential_ac_1783972390698",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "residential_ac_1783972390698",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "smoking_1784145054055",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "obesity_1784144593189",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "obesity_1784144593189",
+   "target": "asthma_1784146206133",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "cancer_1784855214074",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "urban_services_1783977147881",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "stroke_1784146459095",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "copd_1784146295982",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "copd_1784146295982",
+   "target": "disability_1784147651024",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "outdoor_air_temperature_1784135714029",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "arthritis_1784144884850",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "both"
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "urban_shading_1783691476995",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "builtup_density_1783972052437",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "availability_of_cooling_sites_1784852908319",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "availability_of_cooling_sites_1784852908319",
+   "target": "availability_of_cooling_showers_1784135645729",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "availability_of_cooling_sites_1784852908319",
+   "target": "availability_of_cooling_fountains_1784135670746",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "stroke_1784146459095",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "stroke_1784146459095",
+   "target": "heart_disease_1784146425621",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "copd_1784146295982",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "both"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "arthritis_1784144884850",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "asthma_1784146206133",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "heart_disease_1784146425621",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "food_insecurity_1784147824522",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "roof_albedo_1783971375925",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "overcrowding_1784147903969",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "smoking_1784145054055",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "diabetes_1784144610360",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "social_isolation_1784145027768",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "social_isolation_1784145027768",
+   "target": "cancer_1784855214074",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "lack_of_transport_access_1784147873769",
+   "target": "persons_living_below_poverty_line_1784148138406",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "lack_of_transport_access_1784147873769",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "pm25_1785013100042",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "pm25_1785013100042",
+   "target": "no2_1785013145334",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "availability_of_cooling_showers_1784135645729",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "availability_of_cooling_showers_1784135645729",
+   "target": "availability_of_cooling_fountains_1784135670746",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "disability_1784147651024",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "both"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "roof_albedo_1783971375925",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "population_vulnerability_1783971475568",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "contradicted",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "young_children_1785006681071",
+   "polarity": NaN,
+   "label": "decreases",
+   "description": "",
+   "evidence": "added",
+   "provenance": "discovered"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "arthritis_1784144884850",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "copd_1784146295982",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "binge_drinking_1784145064780",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": "",
+   "evidence": "retained",
+   "provenance": "domain"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "arthritis_1784144884850",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "arthritis_1784144884850",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "asthma_1784146206133",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "asthma_1784146206133",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "availability_of_cooling_fountains_1784135670746",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "availability_of_cooling_showers_1784135645729",
+   "target": "roof_albedo_1783971375925",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "builtup_density_1783972052437",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "roof_albedo_1783971375925",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "travel_demand_1783977131621",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "roof_albedo_1783971375925",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "copd_1784146295982",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "copd_1784146295982",
+   "target": "smoking_1784145054055",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "housing_insecurity_1784147837698",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "lack_of_transport_access_1784147873769",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "median_income_1785006491072",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "overcrowding_1784147903969",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "heart_disease_1784146425621",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "lack_of_transport_access_1784147873769",
+   "target": "utilities_threat_1784147785218",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "overcrowding_1784147903969",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "overcrowding_1784147903969",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "roof_albedo_1783971375925",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "mental_distress_1784144798177",
+   "target": "persons_living_below_poverty_line_1784148138406",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "population_density_1783691363491",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "obesity_1784144593189",
+   "target": "travel_demand_1783977131621",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "outdoor_air_temperature_1784135714029",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "population_density_1783691363491",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "young_children_1785006681071",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "population_density_1783691363491",
+   "target": "urban_services_1783977147881",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "roof_albedo_1783971375925",
+   "target": "urban_services_1783977147881",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "young_children_1785006681071",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "unmeasured common cause",
+   "description": "FCI marks this pair bidirected: their association is not explained by any measured variable.",
+   "evidence": "latent",
+   "provenance": "fci"
+  }
+ ],
+ "loops": []
+}

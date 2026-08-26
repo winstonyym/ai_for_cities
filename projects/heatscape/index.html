@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heatscape NYC — Urban Heat Intervention Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css"
+    />
+    <!--
+      ?v= is a cache buster, and it is load-bearing. `python3 -m http.server`
+      sends no Cache-Control header, so browsers apply heuristic freshness and
+      may reuse app.js or styles.css without revalidating. The JSON payloads are
+      safe because app.js fetches them with `cache: "no-cache"`, but a script tag
+      has no such option — which means an edited app.js can keep running its
+      previous version against freshly-loaded data. That combination throws
+      wherever the old code reads a field the new payload no longer carries, and
+      the resulting error names neither the cache nor the file.
+
+      Bump this number whenever styles.css, diagram.js or app.js changes.
+      Reloading the page re-reads index.html, so a new number pulls the assets
+      with it. `python3 serve.py` sends `Cache-Control: no-store` and sidesteps
+      the whole problem; this is the belt to its braces.
+    -->
+    <link rel="stylesheet" href="./styles.css?v=4" />
+  </head>
+  <body>
+    <main id="app-shell">
+      <div id="map"></div>
+
+      <!-- Loading overlay -->
+      <section id="loading-modal" class="loading-modal" role="dialog" aria-modal="true" aria-busy="true">
+        <div class="loading-modal__panel">
+          <div class="loading-modal__spinner" aria-hidden="true"></div>
+          <div class="loading-modal__copy">
+            <h2 id="loading-title">Loading Heatscape NYC</h2>
+            <p id="loading-message">Fetching the 250 m analysis grid</p>
+            <p class="loading-modal__note">16,525 cells &middot; 35 indicators &middot; 8 systems</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Left glass panel -->
+      <section id="panel" class="panel" aria-label="Heatscape controls">
+        <div class="panel__topline">
+          <div class="panel__title">
+            <h1>Heatscape <span>NYC</span></h1>
+            <p class="panel__eyebrow">
+              Urban heat intervention planner &mdash; a 250&thinsp;m grid ranking where cooling
+              interventions matter most, from a systems view of greenery, heat, people and health.
+            </p>
+          </div>
+          <button id="panel-collapse" class="icon-btn" type="button" aria-expanded="true" title="Collapse panel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+        </div>
+
+        <div id="panel-content" class="panel__content">
+          <!-- Layer switcher -->
+          <div class="section">
+            <div class="section__head static"><h3>Map layer</h3></div>
+            <div id="layer-chips" class="chips"></div>
+            <div class="scale-row">
+              <span class="scale-row__label">Colour scale · <b id="scale-name">Heat</b></span>
+              <div id="scale-swatches" class="scale-swatches"></div>
+            </div>
+            <div id="legend" class="legend"></div>
+          </div>
+
+          <!-- Weights -->
+          <div class="section">
+            <button class="section__head" data-toggle="weights-body" aria-expanded="false">
+              <h3>Priority weights</h3>
+              <span class="section__meta"><span id="weights-state">shapley</span>
+                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div id="weights-body" class="section__body collapsed">
+              <div class="wpreset" role="group" aria-label="Weighting basis">
+                <button id="preset-shapley" class="wpreset__btn is-active" type="button">
+                  Shapley
+                  <span>share of attributed variance</span>
+                </button>
+                <button id="preset-equal" class="wpreset__btn" type="button">
+                  Equal
+                  <span>every indicator counts the same</span>
+                </button>
+              </div>
+              <p class="hint" id="weights-hint">
+                One slider per indicator, holding its Shapley value &mdash; the share of
+                explained variance in heat-emergency incidence attributed to it. Drag to
+                re-prioritise; the map, priority scores and intervention ranking update live.
+              </p>
+              <div id="weights-note" class="cnote hidden"></div>
+              <div id="weight-sliders"></div>
+              <button id="weights-reset" class="ghost-btn" type="button">Reset to Shapley weights</button>
+            </div>
+          </div>
+
+          <!-- Selected cell -->
+          <div class="section" id="cell-section">
+            <div class="section__head static"><h3>Selected cell</h3></div>
+            <div id="cell-empty" class="empty-state">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              <p>Click any grid cell on the map to see why its priority is high or low &mdash;
+              indicator percentiles, recommended interventions and the live systems diagram.</p>
+            </div>
+            <div id="cell-detail" class="hidden">
+              <div class="cell-head">
+                <div>
+                  <h4 id="cell-nta">—</h4>
+                  <p id="cell-sub" class="cell-sub">—</p>
+                </div>
+                <div class="score-badge" id="cell-score-badge">
+                  <span id="cell-score">–</span>
+                  <label>priority</label>
+                </div>
+              </div>
+              <div id="cell-gate-note" class="gate-note hidden"></div>
+
+              <h5 class="block-label">Recommended interventions</h5>
+              <div id="interventions"></div>
+
+              <h5 class="block-label">Context indicators
+                <span class="block-label__hint">percentile vs all populated cells</span></h5>
+              <div id="categories"></div>
+            </div>
+          </div>
+
+          <!-- System diagram -->
+          <div class="section">
+            <div class="section__head static">
+              <h3>Systems diagram</h3>
+              <button id="diagram-expand" class="icon-btn" type="button" title="Present full screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              </button>
+            </div>
+            <p class="hint" id="diagram-hint">
+              Causal structure of urban heat risk. Select a cell to trace which parts of the
+              system are activated there.
+            </p>
+            <div id="diagram-mini" class="diagram-mini"></div>
+            <div id="diagram-legend" class="diagram-legend"></div>
+          </div>
+
+          <footer class="panel__footer">
+            <p>Data: NYC Open Data, CDC PLACES, ACS 2023, Meta 1&thinsp;m CHM, Sevtsuk et&nbsp;al. pedestrian flows.
+            Percentiles ranked across populated cells only &mdash; cells without residents are excluded from prioritisation.</p>
+          </footer>
+        </div>
+      </section>
+
+      <button id="panel-open" class="panel-open hidden" type="button" title="Open panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
+      <!-- Hover tooltip -->
+      <div id="tooltip" class="tooltip hidden"></div>
+
+      <!-- Fullscreen diagram presentation -->
+      <section id="diagram-overlay" class="diagram-overlay hidden" role="dialog" aria-modal="true">
+        <div class="diagram-overlay__bar">
+          <div>
+            <h2>Urban heat systems diagram</h2>
+            <p id="overlay-context">Citywide view — no cell selected</p>
+          </div>
+          <div class="diagram-overlay__actions">
+            <button id="flow-toggle" class="ghost-btn" type="button">Pause flow</button>
+            <button id="diagram-close" class="icon-btn" type="button" title="Close">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="diagram-full" class="diagram-full"></div>
+        <div id="overlay-readout" class="diagram-overlay__readout hidden"></div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+    <script src="./diagram.js?v=4"></script>
+    <script src="./app.js?v=4"></script>
+  </body>
+</html>

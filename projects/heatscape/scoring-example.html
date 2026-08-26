@@ -1,0 +1,874 @@
+<title>Scoring a Times Square Cell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root {
+  --ground:#EFF1F5; --panel:#FFFFFF; --panel-2:#F7F8FA;
+  --ink:#14171E; --ink-2:#4E5665; --muted:#838B9A;
+  --rule:#DCE0E8; --rule-strong:#C4CAD5;
+  --accent:#BF4A2E; --accent-ink:#A03D25; --accent-wash:#F7E5DE;
+  --mark:#BF4A2E; --mark-track:#E4E7ED; --sel:#2E6E7D;
+  --shadow:0 1px 2px rgba(20,23,30,.05), 0 8px 24px -14px rgba(20,23,30,.18);
+  --sans:"IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:#0F1217; --panel:#161A21; --panel-2:#1B2029;
+    --ink:#ECEFF4; --ink-2:#A6AEBC; --muted:#737C8C;
+    --rule:#262D38; --rule-strong:#39424F;
+    --accent:#E9764F; --accent-ink:#F0906D; --accent-wash:#33201A;
+    --mark:#E9764F; --mark-track:#232A34; --sel:#5FA9B8;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:#0F1217; --panel:#161A21; --panel-2:#1B2029;
+  --ink:#ECEFF4; --ink-2:#A6AEBC; --muted:#737C8C;
+  --rule:#262D38; --rule-strong:#39424F;
+  --accent:#E9764F; --accent-ink:#F0906D; --accent-wash:#33201A;
+  --mark:#E9764F; --mark-track:#232A34; --sel:#5FA9B8;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -16px rgba(0,0,0,.7);
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--serif); font-size:1.0625rem; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-inline-size:1160px; margin-inline:auto; padding:0 clamp(1rem, 4vw, 2.5rem) 6rem; }
+.col { max-inline-size:70ch; }
+p { margin:0 0 1.05em; }
+a { color:var(--accent-ink); }
+strong { font-weight:600; }
+code, .mono { font-family:var(--mono); font-size:.92em; font-variant-numeric:tabular-nums; }
+
+/* ---------- masthead ---------- */
+.mast { padding:clamp(3rem, 7vw, 5.5rem) 0 1rem; }
+.eyebrow {
+  font-family:var(--sans); font-weight:600; font-size:.75rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent-ink); margin:0 0 1rem;
+}
+h1 {
+  font-family:var(--sans); font-weight:700; letter-spacing:-.015em; text-wrap:balance;
+  font-size:clamp(2.3rem, 1.4rem + 3.6vw, 4rem); line-height:1.02; margin:0 0 1rem;
+}
+.stand { font-size:1.2rem; color:var(--ink-2); max-inline-size:60ch; margin:0; }
+
+/* ---------- specimen ---------- */
+.specimen {
+  margin-block:2.75rem 0; background:var(--panel); border:1px solid var(--rule);
+  border-radius:3px; box-shadow:var(--shadow); overflow:hidden;
+  display:grid; grid-template-columns:1fr; 
+}
+@media (min-width:720px) { .specimen { grid-template-columns:1fr auto; } }
+.specimen__body { padding:1.5rem 1.6rem; display:grid; gap:1.1rem; }
+.specimen__head { font-family:var(--sans); font-weight:600; font-size:1.35rem; letter-spacing:-.01em; }
+.specimen__head span { color:var(--muted); font-weight:500; }
+.facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(122px,1fr)); gap:1rem 1.5rem; margin:0; }
+.facts div { display:grid; gap:.15rem; }
+.facts dt { font-family:var(--sans); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.facts dd { margin:0; font-family:var(--mono); font-size:.9rem; font-variant-numeric:tabular-nums; }
+.readout {
+  background:var(--accent-wash); border-inline-start:1px solid var(--rule);
+  padding:1.5rem 1.9rem; display:grid; align-content:center; justify-items:center; gap:.15rem;
+}
+.readout b { font-family:var(--mono); font-weight:500; font-size:clamp(3rem, 2rem + 3vw, 4.2rem); line-height:.95; color:var(--accent-ink); font-variant-numeric:tabular-nums; }
+.readout span { font-family:var(--sans); font-size:.7rem; letter-spacing:.11em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; }
+.readout small { font-family:var(--sans); color:var(--ink-2); font-size:.8rem; }
+
+/* ---------- sections ---------- */
+section { margin-block-start:clamp(3rem, 5.5vw, 4.5rem); }
+.shead { display:flex; align-items:baseline; gap:.9rem; border-block-start:2px solid var(--ink); padding-block-start:.7rem; margin-block-end:1.6rem; }
+.shead__n { font-family:var(--mono); font-size:.85rem; color:var(--accent-ink); font-weight:500; }
+h2 { font-family:var(--sans); font-weight:600; font-size:clamp(1.45rem, 1.1rem + 1.1vw, 2rem); letter-spacing:-.01em; margin:0; text-wrap:balance; }
+h3 { font-family:var(--sans); font-weight:600; font-size:1.1rem; letter-spacing:.005em; margin:2.4rem 0 .7rem; }
+.lede { font-size:1.1rem; color:var(--ink-2); }
+
+/* ---------- steps ---------- */
+.step { margin-block-start:2.5rem; padding-inline-start:1.25rem; border-inline-start:2px solid var(--rule); }
+.step__t { font-family:var(--sans); font-weight:600; font-size:.75rem; letter-spacing:.13em; text-transform:uppercase; color:var(--accent-ink); margin:0 0 .45rem; }
+
+/* ---------- formula slab ---------- */
+.slab {
+  background:var(--panel); border:1px solid var(--rule); border-radius:3px;
+  padding:1.15rem 1.3rem; margin:1.3rem 0; overflow-x:auto;
+  font-family:var(--mono); font-size:.9rem; line-height:1.85; font-variant-numeric:tabular-nums;
+  color:var(--ink-2);
+  /* the arithmetic is written line by line — keep the authored breaks, and let
+     a long line wrap rather than pushing the page sideways on a phone */
+  white-space:pre-wrap;
+}
+.slab b { color:var(--ink); font-weight:500; }
+.slab .res { color:var(--accent-ink); font-weight:500; }
+.slab .cmt { color:var(--muted); }
+.slab--tight { line-height:1.6; }
+
+/* ---------- tables ---------- */
+figure { margin:1.6rem 0; }
+.tw { overflow-x:auto; border:1px solid var(--rule); border-radius:3px; background:var(--panel); }
+table { border-collapse:collapse; inline-size:100%; font-family:var(--sans); font-size:.885rem; }
+caption { text-align:start; font-family:var(--sans); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; padding:.85rem 1rem .1rem; }
+th, td { padding:.44rem .75rem; text-align:start; border-block-start:1px solid var(--rule); white-space:nowrap; }
+thead th {
+  font-size:.7rem; letter-spacing:.075em; text-transform:uppercase; color:var(--muted);
+  font-weight:600; border-block-start:none; border-block-end:1px solid var(--rule-strong); padding-block:.6rem;
+}
+tbody th { font-weight:500; color:var(--ink); }
+.num { text-align:end; font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.845rem; }
+.sub { color:var(--muted); }
+.dir { text-align:center; color:var(--muted); }
+.unit { color:var(--muted); font-family:var(--sans); font-size:.72rem; margin-inline-start:.35em; }
+tbody tr:hover { background:var(--panel-2); }
+tr.is-void th, tr.is-void td { color:var(--muted); }
+tfoot td, tfoot th { border-block-start:1px solid var(--rule-strong); font-weight:600; color:var(--ink); }
+.dot { display:inline-block; inline-size:7px; block-size:7px; border-radius:50%; background:var(--dot); margin-inline-end:.55em; vertical-align:.08em; }
+.bar { inline-size:38%; min-inline-size:120px; }
+.bar__track { display:block; block-size:9px; background:var(--mark-track); border-radius:2px; }
+.bar__track i { display:block; block-size:100%; background:var(--mark); border-start-end-radius:4px; border-end-end-radius:4px; }
+tr.is-void .bar__track i { background:var(--rule-strong); }
+tr.is-top th { color:var(--accent-ink); }
+.chip {
+  font-size:.6rem; letter-spacing:.09em; text-transform:uppercase; font-weight:600;
+  background:var(--accent); color:#fff; padding:.14em .5em; border-radius:2px; margin-inline-start:.5em; vertical-align:.1em;
+}
+:root[data-theme="dark"] .chip, :root:not([data-theme="light"]) .chip { color:#1A0E09; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .chip { color:#fff; } }
+
+.expr { font-family:var(--mono); font-size:.78rem; color:var(--ink-2); font-variant-numeric:tabular-nums; }
+.note-cell { font-size:.78rem; color:var(--muted); }
+tr:not(.is-void) .note-cell { color:var(--ink-2); }
+
+/* ---------- callout ---------- */
+.note {
+  border-inline-start:3px solid var(--sel); background:var(--panel);
+  padding:1rem 1.2rem; margin:1.6rem 0; border-radius:0 3px 3px 0;
+  font-size:1rem; color:var(--ink-2);
+}
+.note b { color:var(--ink); font-family:var(--sans); font-weight:600; display:block; margin-block-end:.25rem; font-size:.95rem; }
+.note p:last-child { margin-block-end:0; }
+
+/* ---------- footer ---------- */
+footer { margin-block-start:5rem; border-block-start:1px solid var(--rule); padding-block-start:1.5rem; color:var(--muted); font-size:.9rem; }
+footer h3 { margin-block-start:1.5rem; }
+footer ul { padding-inline-start:1.1rem; margin:0; }
+footer li { margin-block-end:.5rem; }
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Heatscape NYC &middot; scoring worksheet</p>
+  <h1>How one cell gets its score</h1>
+  <p class="stand">Every number the app shows for a 250&nbsp;m cell comes out of two short calculations. Here they are, run end to end on a block of Midtown-Times Square.</p>
+
+  <div class="specimen">
+    <div class="specimen__body">
+      <div class="specimen__head">Cell #22085 <span>&middot; Midtown-Times Square</span></div>
+      <dl class="facts">
+        <div><dt>Centroid</dt><dd>40.75791, -73.98856</dd></div>
+        <div><dt>Footprint</dt><dd>250 &times; 250 m</dd></div>
+        <div><dt>Residents</dt><dd>920</dd></div>
+        <div><dt>Indicators counted</dt><dd>18 of 43</dd></div>
+      </dl>
+    </div>
+    <div class="readout">
+      <span>Priority</span>
+      <b>75.7</b>
+      <small>362nd of 9,486 &middot; top 3.8%</small>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="shead"><span class="shead__n">01</span><h2>One slider per indicator</h2></div>
+  <div class="col">
+    <p class="lede">There is no category multiplier. Each of the 43 indicators has a single control holding its <strong>Shapley value</strong> &mdash; the share of explained variance in heat-emergency incidence the decomposition attributes to it &mdash; and everything the app scores is built from those 43 numbers.</p>
+    <p>A category has no weight of its own. It is worth the <em>sum</em> of the sliders inside it, and it reads as the <em>plain mean</em> of the indicators still switched on. Weighting happens once, between categories; inside a category every live indicator counts the same. Human co&#8209;location, for instance, contributes</p></div>
+
+  <div class="slab"><b>0.350191</b> &times; ( 99.8 + 98.5 ) / 2 = <span class="res">34.7214</span>&nbsp;&nbsp;<span class="cmt">pedestrian flow 0.214982 + points of interest 0.135209</span>
+
+<b>0.229475</b> &times; 99.8 = <span class="res">22.9016</span>&nbsp;&nbsp;<span class="cmt">built environment &mdash; one indicator, so the mean is the reading</span></div>
+
+  <div class="col">
+    <p>The priority score is the straight sum of those nine terms, gated by population. Shapley shares add to 1 across the full indicator set, so a cell that can be read everywhere lands on 0&ndash;100 with no normalising constant &mdash; and a cell with gaps scores lower, because there is less evidence of risk in it rather than because the missing categories were quietly redistributed.</p></div>
+
+  <div class="slab"><b>priority</b> = &Sigma;<sub>categories</sub> ( &Sigma; &phi; over live indicators &times; mean of their directed percentiles ) &times; gate
+<span class="cmt">&nbsp;&nbsp;live = a share above zero <b>and</b> a reading in this cell</span></div>
+
+  <figure>
+    <div class="tw"><table>
+      <caption>What each category is worth, at the default weights</caption>
+      <thead><tr><th scope="col">Category</th><th scope="col">Summed Shapley value</th><th scope="col">&Sigma; &phi;</th><th scope="col">Of total</th><th scope="col">Switched on</th></tr></thead>
+      <tbody>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F9844A"></span>Human co-location</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:100.00%"></i></span></td>
+        <td class="num">0.350191</td>
+        <td class="num sub">35.02%</td>
+        <td class="num sub">2/2</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#C9A227"></span>Built environment</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:65.53%"></i></span></td>
+        <td class="num">0.229475</td>
+        <td class="num sub">22.95%</td>
+        <td class="num sub">1/1</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Adaptation capacity</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:65.27%"></i></span></td>
+        <td class="num">0.228576</td>
+        <td class="num sub">22.86%</td>
+        <td class="num sub">3/4</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#E05E3D"></span>Heat exposure</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:21.99%"></i></span></td>
+        <td class="num">0.077023</td>
+        <td class="num sub">7.70%</td>
+        <td class="num sub">2/3</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Social determinants</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:12.34%"></i></span></td>
+        <td class="num">0.043197</td>
+        <td class="num sub">4.32%</td>
+        <td class="num sub">7/11</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Urban greenery</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:11.48%"></i></span></td>
+        <td class="num">0.040204</td>
+        <td class="num sub">4.02%</td>
+        <td class="num sub">3/4</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#577590"></span>Air quality</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:8.77%"></i></span></td>
+        <td class="num">0.030705</td>
+        <td class="num sub">3.07%</td>
+        <td class="num sub">1/2</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Behaviour &amp; mental health</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:0.60%"></i></span></td>
+        <td class="num">0.000482</td>
+        <td class="num sub">0.05%</td>
+        <td class="num sub">4/4</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Physiological vulnerability</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:0.60%"></i></span></td>
+        <td class="num">0.000146</td>
+        <td class="num sub">0.01%</td>
+        <td class="num sub">2/12</td>
+      </tr></tbody>
+    </table></div>
+  </figure>
+
+  <div class="note">
+    <b>Zero means gone, not muted</b>
+    <p>Pulling a slider to zero removes that indicator from its category&rsquo;s mean as well as from its weight. Eighteen indicators arrive at zero already &mdash; the decomposition gave them nothing &mdash; so canopy cover, albedo, drinking-fountain distance and fifteen others take no part in the score at all. That is also why permeable paving was dropped as an intervention: its levers were impervious ground and canopy cover, and neither carries attribution.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="shead__n">02</span><h2>The priority score, step by step</h2></div>
+
+  <div class="step col">
+    <p class="step__t">Step 1 &mdash; turn each reading into a directed percentile</p>
+    <p>Every indicator is ranked against all 16,525 cells in the city. If the indicator protects against heat, the percentile is flipped so that high always means worse. This cell has <strong>14 street trees</strong>, the 7th percentile citywide; trees protect, so it enters at <strong>93.0</strong>. Pedestrian flow of 1,019&nbsp;ped/m is the 99.8th percentile and enters as it is.</p></div>
+
+  <div class="step">
+    <p class="step__t">Step 2 &mdash; average the live indicators in each category</p>
+    <div class="col"><p>A plain mean, over the indicators that both carry a share and have a reading here. Human co&#8209;location has two, both near the top of the city, and both count the same even though footfall is attributed 1.6&times; what points of interest are &mdash; that difference is spent on the category&rsquo;s weight, not inside it.</p></div>
+    <figure>
+      <div class="tw"><table>
+        <caption>Human co-location</caption>
+        <thead><tr><th scope="col">Indicator</th><th scope="col">Shapley value</th><th scope="col">Directed</th><th scope="col">Status</th></tr></thead>
+        <tbody><tr><th scope="row">Pedestrian flow</th><td class="num">0.214982</td><td class="num">99.8</td><td class="note-cell">counts</td></tr><tr><th scope="row">Points of interest</th><td class="num">0.135209</td><td class="num">98.5</td><td class="note-cell">counts</td></tr></tbody>
+      </table></div>
+    </figure>
+    <div class="slab slab--tight">mean = (99.8 + 98.5) / 2 = <span class="res">99.15</span>&nbsp;&nbsp;&nbsp;&Sigma;&phi; = <span class="res">0.350191</span></div>
+
+    <div class="col"><p>Adaptation capacity shows what the plain mean changes. It carries almost as much attribution as built volume, and this cell scores <em>low</em> on it: 97.4% of households here have air conditioning, the 93rd percentile citywide and so a directed value of 6.7. Under the old within-category weighting that one indicator held four fifths of the category and dragged it to 19.4. Now the three live indicators average evenly to 33.0 &mdash; distance to a cooling centre gets a real say.</p></div>
+    <figure>
+      <div class="tw"><table>
+        <caption>Adaptation capacity</caption>
+        <thead><tr><th scope="col">Indicator</th><th scope="col">Shapley value</th><th scope="col">Directed</th><th scope="col">Status</th></tr></thead>
+        <tbody><tr><th scope="row">Households with AC</th><td class="num">0.183452</td><td class="num">6.7</td><td class="note-cell">counts</td></tr><tr><th scope="row">Dist. to cooling centre</th><td class="num">0.044524</td><td class="num">71.6</td><td class="note-cell">counts</td></tr><tr><th scope="row">Dist. to spray shower</th><td class="num">0.000600</td><td class="num">20.7</td><td class="note-cell">counts</td></tr><tr class="is-void"><th scope="row">Dist. to drinking fountain</th><td class="num">0.000000</td><td class="num">32.3</td><td class="note-cell">no attribution — switched off</td></tr></tbody>
+      </table></div>
+    </figure>
+    <div class="slab slab--tight">mean = (6.7 + 71.6 + 20.7) / 3 = <span class="res">33.00</span>&nbsp;&nbsp;&nbsp;&Sigma;&phi; = <span class="res">0.228576</span></div></div>
+
+  <div class="step">
+    <p class="step__t">Step 3 &mdash; weight each category by its summed share and add up</p>
+    <div class="col"><p>Behaviour &amp; mental health has no readings in this cell at all, so it contributes nothing and nothing is renormalised to cover for it. Note the small shortfalls elsewhere: social determinants is worth 0.043197 on paper but 0.043123 here, because utility insecurity has no reading and drops out of the sum along with the mean.</p></div>
+    <figure>
+      <div class="tw"><table>
+        <caption>Category contributions to cell #22085</caption>
+        <thead><tr><th scope="col">Category</th><th scope="col">&Sigma; &phi; here</th><th scope="col">Mean of live indicators</th><th scope="col">=</th><th scope="col">Contribution</th><th scope="col">Product</th></tr></thead>
+        <tbody>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F9844A"></span>Human co-location</th>
+        <td class="num">0.350191</td>
+        <td class="expr">(99.8 + 98.5) / 2</td>
+        <td class="num">99.15</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:100.00%"></i></span></td>
+        <td class="num">34.7214</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#C9A227"></span>Built environment</th>
+        <td class="num">0.229475</td>
+        <td class="expr">99.8</td>
+        <td class="num">99.80</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:65.96%"></i></span></td>
+        <td class="num">22.9016</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Adaptation capacity</th>
+        <td class="num">0.228576</td>
+        <td class="expr">(6.7 + 71.6 + 20.7) / 3</td>
+        <td class="num">33.00</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:21.72%"></i></span></td>
+        <td class="num">7.5430</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Urban greenery</th>
+        <td class="num">0.040204</td>
+        <td class="expr">(93.0 + 67.9 + 99.7) / 3</td>
+        <td class="num">86.87</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:10.06%"></i></span></td>
+        <td class="num">3.4924</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#577590"></span>Air quality</th>
+        <td class="num">0.030705</td>
+        <td class="expr">99.7</td>
+        <td class="num">99.70</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:8.82%"></i></span></td>
+        <td class="num">3.0613</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Social determinants</th>
+        <td class="num">0.043123</td>
+        <td class="expr">(16.7 + 97.4 + 83.5 + 2.0 + 84.8 + 76.8) / 6</td>
+        <td class="num">60.20</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:7.48%"></i></span></td>
+        <td class="num">2.5960</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#E05E3D"></span>Heat exposure</th>
+        <td class="num">0.043798</td>
+        <td class="expr">31.8</td>
+        <td class="num">31.80</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:4.01%"></i></span></td>
+        <td class="num">1.3928</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Physiological vulnerability</th>
+        <td class="num">0.000025</td>
+        <td class="expr">72.2</td>
+        <td class="num">72.20</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:0.01%"></i></span></td>
+        <td class="num">0.0018</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Behaviour &amp; mental health</th>
+        <td class="num">0.000000</td>
+        <td class="expr">—</td>
+        <td class="num">—</td>
+        <td class="bar"><span class="bar__track"><i style="inline-size:0.00%"></i></span></td>
+        <td class="num">no data</td>
+      </tr></tbody>
+        <tfoot><tr><th scope="row">Priority, before the gate</th><td class="num"></td><td></td><td class="num"></td><td></td><td class="num">75.7103</td></tr></tfoot>
+      </table></div>
+    </figure></div>
+
+  <div class="step">
+    <p class="step__t">Step 4 &mdash; gate on residents</p>
+    <div class="col"><p>Interventions are not prioritised where nobody lives, so the score is scaled by <code>min(1, pop / 50)</code>. With 920 residents this cell is fully gated in and the multiplier is 1.</p></div>
+    <div class="slab slab--tight">75.7103 &times; 1 = <b class="res">75.71</b>&nbsp;&nbsp;<span class="cmt">&rarr; displayed as 76</span></div>
+    <div class="col"><p>That puts the cell 362nd of 9,486 populated cells, inside the top 3.8%. For scale, the highest-scoring cell in the city reaches 85.5 and the median populated cell sits at 48.6 &mdash; the ceiling is below 100 because no cell is at the top of every category at once, and because 18 indicators are switched off citywide.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="shead__n">03</span><h2>The top intervention</h2></div>
+  <div class="col">
+    <p class="lede">Interventions read the same sliders. Each one names the levers it acts on, weights them by their current Shapley values, and renormalises over its own lever list &mdash; so re&#8209;weighting an indicator moves the intervention ranking along with the map.</p></div>
+
+  <figure>
+    <div class="tw"><table>
+      <caption>Shaded pedestrian corridors &mdash; levers, live weights, and this cell&rsquo;s readings</caption>
+      <thead><tr><th scope="col">Lever</th><th scope="col">Shapley value</th><th scope="col">Directed</th><th scope="col">Product</th></tr></thead>
+      <tbody><tr><th scope="row">Pedestrian flow</th><td class="num">0.214982</td><td class="num">99.8</td><td class="num">21.455</td></tr><tr><th scope="row">Points of interest</th><td class="num">0.135209</td><td class="num">98.5</td><td class="num">13.318</td></tr><tr><th scope="row">Summer LST deviation</th><td class="num">0.043798</td><td class="num">31.8</td><td class="num">1.393</td></tr><tr class="is-void"><th scope="row">Building shadow</th><td class="num">0.033225</td><td class="num" colspan="2">no reading — dropped</td></tr></tbody>
+      <tfoot><tr><th scope="row">Total</th><td class="num">0.393989</td><td class="num">&mdash;</td><td class="num">36.166</td></tr></tfoot>
+    </table></div>
+  </figure>
+
+  <div class="slab slab--tight">36.166 / 0.393989 = 91.79 &times; gate 1 = <b class="res">91.8</b> / 100</div>
+
+  <div class="col">
+    <p>Building shadow has no reading in this cell, so it drops out and the remaining three renormalise &mdash; which is why the divisor is 0.393989 rather than the intervention&rsquo;s full lever weight. The cell is at the 99.8th percentile for footfall and the 98.5th for points of interest, and those two carry 89% of the live weight between them. Summer surface temperature pulls the other way at 31.8, and it is the only thing keeping the score off the high nineties.</p>
+    <p>Cool roofs comes in 2.9 points behind on almost the same evidence: built volume is 99.8 here, but with only two live levers the same lukewarm temperature reading counts for 16% of its score instead of 11%. Plant street trees lands third &mdash; it is now 77% pedestrian flow, so it tracks the corridors closely and separates only on the tree count.</p>
+    <p>New open & green space sits well down the list at 48.3. Its social&#8209;determinants lever is a category factor: it takes that category&rsquo;s summed weight (0.043123) and its plain mean (60.2), which is exactly what would happen if all six live social indicators were listed as levers individually. Under the old weighting that lever read 73.2 because housing insecurity dominated it; the plain mean brings crowding at 16.7 and children at 2.0 back into view and pulls it down.</p></div>
+
+  <figure>
+    <div class="tw"><table>
+      <caption>All six interventions, cell #22085</caption>
+      <thead><tr><th scope="col">Intervention</th><th scope="col">Score</th><th scope="col">/100</th></tr></thead>
+      <tbody>
+      <tr class="is-top">
+        <th scope="row">Shaded pedestrian corridors <span class="chip">selected</span></th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:100.00%"></i></span></td>
+        <td class="num">91.8</td>
+      </tr>
+      <tr>
+        <th scope="row">Cool roofs</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:96.85%"></i></span></td>
+        <td class="num">88.9</td>
+      </tr>
+      <tr>
+        <th scope="row">Plant street trees</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:96.56%"></i></span></td>
+        <td class="num">88.6</td>
+      </tr>
+      <tr>
+        <th scope="row">Outdoor cooling amenities</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:94.73%"></i></span></td>
+        <td class="num">87.0</td>
+      </tr>
+      <tr>
+        <th scope="row">New open &amp; green space</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:52.64%"></i></span></td>
+        <td class="num">48.3</td>
+      </tr>
+      <tr>
+        <th scope="row">Indoor cooling support</th>
+        <td class="bar"><span class="bar__track"><i style="inline-size:22.12%"></i></span></td>
+        <td class="num">20.3</td>
+      </tr></tbody>
+    </table></div>
+  </figure>
+
+  <div class="col">
+    <p>Indoor cooling support finishes last at 20.3, for the same reason adaptation capacity scored low in step 2: near&#8209;universal air conditioning. That is the ranking doing its job &mdash; this block does not need subsidised AC, it needs shade over the sidewalk.</p>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="shead__n">04</span><h2>Every indicator in the cell</h2></div>
+  <div class="col"><p>All 43, ordered by attribution. 18 count here; 18 are switched off because the decomposition attributed them nothing, and 7 more carry a share but have no reading in this cell.</p></div>
+  <figure>
+    <div class="tw"><table>
+      <caption>Cell #22085 &middot; &uarr; raises risk, &darr; protects and is flipped</caption>
+      <thead><tr><th scope="col">Indicator</th><th scope="col">Reading</th><th scope="col">Pctile</th><th scope="col">Dir</th><th scope="col">Directed</th><th scope="col">Shapley value</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#C9A227"></span>Built volume</th>
+        <td class="num">5,372<span class="unit">10³ m³</span></td>
+        <td class="num">99.8</td>
+        <td class="dir">↑</td>
+        <td class="num">99.8</td>
+        <td class="num">0.229475</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F9844A"></span>Pedestrian flow</th>
+        <td class="num">1,019<span class="unit">ped/m</span></td>
+        <td class="num">99.8</td>
+        <td class="dir">↑</td>
+        <td class="num">99.8</td>
+        <td class="num">0.214982</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Households with AC</th>
+        <td class="num">97.41<span class="unit">%</span></td>
+        <td class="num">93.3</td>
+        <td class="dir">↓</td>
+        <td class="num">6.7</td>
+        <td class="num">0.183452</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F9844A"></span>Points of interest</th>
+        <td class="num">60<span class="unit">POIs</span></td>
+        <td class="num">98.5</td>
+        <td class="dir">↑</td>
+        <td class="num">98.5</td>
+        <td class="num">0.135209</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Dist. to cooling centre</th>
+        <td class="num">3,258<span class="unit">m</span></td>
+        <td class="num">71.6</td>
+        <td class="dir">↑</td>
+        <td class="num">71.6</td>
+        <td class="num">0.044524</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#E05E3D"></span>Summer LST deviation</th>
+        <td class="num">0.2364<span class="unit">°</span></td>
+        <td class="num">31.8</td>
+        <td class="dir">↑</td>
+        <td class="num">31.8</td>
+        <td class="num">0.043798</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#E05E3D"></span>Building shadow</th>
+        <td class="num">—<span class="unit"></span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.033225</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#577590"></span>PM2.5</th>
+        <td class="num">8.494<span class="unit">µg/m³</span></td>
+        <td class="num">99.7</td>
+        <td class="dir">↑</td>
+        <td class="num">99.7</td>
+        <td class="num">0.030705</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Housing insecurity</th>
+        <td class="num">27.73<span class="unit">%</span></td>
+        <td class="num">84.8</td>
+        <td class="dir">↑</td>
+        <td class="num">84.8</td>
+        <td class="num">0.022536</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Street trees</th>
+        <td class="num">14<span class="unit">trees</span></td>
+        <td class="num">7.0</td>
+        <td class="dir">↓</td>
+        <td class="num">93.0</td>
+        <td class="num">0.020403</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Open &amp; green space</th>
+        <td class="num">0<span class="unit">%</span></td>
+        <td class="num">32.1</td>
+        <td class="dir">↓</td>
+        <td class="num">67.9</td>
+        <td class="num">0.010803</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Avg canopy height</th>
+        <td class="num">0<span class="unit">m</span></td>
+        <td class="num">0.3</td>
+        <td class="dir">↓</td>
+        <td class="num">99.7</td>
+        <td class="num">0.008998</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Median income</th>
+        <td class="num">29,870<span class="unit">$</span></td>
+        <td class="num">2.6</td>
+        <td class="dir">↓</td>
+        <td class="num">97.4</td>
+        <td class="num">0.006600</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Crowded households</th>
+        <td class="num">1.971<span class="unit">%</span></td>
+        <td class="num">16.7</td>
+        <td class="dir">↑</td>
+        <td class="num">16.7</td>
+        <td class="num">0.003724</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Children</th>
+        <td class="num">0.5029<span class="unit">%</span></td>
+        <td class="num">2.0</td>
+        <td class="dir">↑</td>
+        <td class="num">2.0</td>
+        <td class="num">0.003591</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Aged population</th>
+        <td class="num">25.89<span class="unit">%</span></td>
+        <td class="num">83.5</td>
+        <td class="dir">↑</td>
+        <td class="num">83.5</td>
+        <td class="num">0.003350</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Loneliness</th>
+        <td class="num">40.83<span class="unit">%</span></td>
+        <td class="num">76.8</td>
+        <td class="dir">↑</td>
+        <td class="num">76.8</td>
+        <td class="num">0.003322</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Dist. to spray shower</th>
+        <td class="num">259.4<span class="unit">m</span></td>
+        <td class="num">20.7</td>
+        <td class="dir">↑</td>
+        <td class="num">20.7</td>
+        <td class="num">0.000600</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Short sleep duration</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000272</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Median age</th>
+        <td class="num">—<span class="unit">years</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000121</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Binge drinking</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000104</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Smoking</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000074</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Utilities insecurity</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000074</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#4D8FAC"></span>Depression</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000032</td>
+        <td class="note-cell">no reading here</td>
+      </tr>
+      <tr>
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Obesity</th>
+        <td class="num">29.7<span class="unit">%</span></td>
+        <td class="num">72.2</td>
+        <td class="dir">↑</td>
+        <td class="num">72.2</td>
+        <td class="num">0.000025</td>
+        <td class="note-cell">counts</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#43AA8B"></span>Canopy cover</th>
+        <td class="num">0<span class="unit">%</span></td>
+        <td class="num">0.8</td>
+        <td class="dir">↓</td>
+        <td class="num">99.2</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#E05E3D"></span>Surface albedo</th>
+        <td class="num">0.1449<span class="unit"></span></td>
+        <td class="num">39.1</td>
+        <td class="dir">↓</td>
+        <td class="num">60.9</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Diabetes</th>
+        <td class="num">20.06<span class="unit">%</span></td>
+        <td class="num">97.8</td>
+        <td class="dir">↑</td>
+        <td class="num">97.8</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>COPD</th>
+        <td class="num">12.9<span class="unit">%</span></td>
+        <td class="num">99.2</td>
+        <td class="dir">↑</td>
+        <td class="num">99.2</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Asthma</th>
+        <td class="num">11.15<span class="unit">%</span></td>
+        <td class="num">74.7</td>
+        <td class="dir">↑</td>
+        <td class="num">74.7</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Coronary heart disease</th>
+        <td class="num">11.85<span class="unit">%</span></td>
+        <td class="num">99.4</td>
+        <td class="dir">↑</td>
+        <td class="num">99.4</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Stroke</th>
+        <td class="num">7.02<span class="unit">%</span></td>
+        <td class="num">99.2</td>
+        <td class="dir">↑</td>
+        <td class="num">99.2</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>High blood pressure</th>
+        <td class="num">43.63<span class="unit">%</span></td>
+        <td class="num">98.8</td>
+        <td class="dir">↑</td>
+        <td class="num">98.8</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>High cholesterol</th>
+        <td class="num">43.32<span class="unit">%</span></td>
+        <td class="num">90.4</td>
+        <td class="dir">↑</td>
+        <td class="num">90.4</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Arthritis</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Cancer</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#0DB39E"></span>Physical disability</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Below poverty line</th>
+        <td class="num">43.62<span class="unit">%</span></td>
+        <td class="num">97.8</td>
+        <td class="dir">↑</td>
+        <td class="num">97.8</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Unemployment</th>
+        <td class="num">22.13<span class="unit">%</span></td>
+        <td class="num">98.9</td>
+        <td class="dir">↑</td>
+        <td class="num">98.9</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Food insecurity</th>
+        <td class="num">39.19<span class="unit">%</span></td>
+        <td class="num">89.8</td>
+        <td class="dir">↑</td>
+        <td class="num">89.8</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#F29E4C"></span>Transport inaccessibility</th>
+        <td class="num">—<span class="unit">%</span></td>
+        <td class="num">—</td>
+        <td class="dir">↑</td>
+        <td class="num">—</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#577590"></span>NO₂</th>
+        <td class="num">26.57<span class="unit">ppb</span></td>
+        <td class="num">99.2</td>
+        <td class="dir">↑</td>
+        <td class="num">99.2</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr>
+      <tr class="is-void">
+        <th scope="row"><span class="dot" style="--dot:#6F63B0"></span>Dist. to drinking fountain</th>
+        <td class="num">252.6<span class="unit">m</span></td>
+        <td class="num">32.3</td>
+        <td class="dir">↑</td>
+        <td class="num">32.3</td>
+        <td class="num">0.000000</td>
+        <td class="note-cell">switched off</td>
+      </tr></tbody>
+    </table></div>
+  </figure>
+</section>
+
+<footer class="col">
+  <h3>What this worksheet does not say</h3>
+  <ul>
+    <li>A Shapley share is <strong>unsigned</strong>. It says how much of the model&rsquo;s fit an indicator accounts for, never in which direction it pushes. Direction comes from the systems diagram and no slider changes it.</li>
+    <li>The decomposition rests on 6 point fits and 16 bootstrap replicates. Shares under about 1% are not separable from one another, and most per&#8209;indicator intervals span zero. Read the top of the table, not the tail.</li>
+    <li>Eighteen of the 43 indicators receive no attribution at all. That is what the decomposition found at 250&nbsp;m &mdash; most of them arrive as tract&#8209;level rates and barely vary between cells inside a tract &mdash; not a judgement that they are causally irrelevant.</li>
+    <li>The <b>Equal</b> preset gives every indicator the same share, which makes a category worth its size. Physiological vulnerability and social determinants hold 23 of the 43 indicators between them, so that map leans hard on tract-level health and census rates and looks very unlike this one. The gap between them is the attribution&rsquo;s whole effect.</li>
+  </ul>
+  <p style="margin-block-start:1.6rem">Weights from <code>shapley_values.csv</code> &middot; scored against <code>grid_data.json</code>, 16,525 cells at 250&nbsp;m &middot; outcome: heat&#8209;emergency incidence.</p>
+</footer>
+
+</div>

@@ -1,0 +1,1114 @@
+{
+ "nodes": [
+  {
+   "label": "Urban greenery (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "availability_of_urban_greenery_1783690972981",
+   "x": 471.73,
+   "y": 791.29
+  },
+  {
+   "label": "Number of Trees",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "number_of_trees_1783691403332",
+   "x": 412.25,
+   "y": 888.63
+  },
+  {
+   "label": "Building shadow",
+   "subsystem": "Infrastructure",
+   "description": "Total accrued shadow. In New York this is dominated by building shadow: it correlates -0.39 with canopy cover and -0.48 with open space, peaking in street canyons with neither. Formerly drawn as 'Urban shading' fed by trees and canopy, which did not describe this measurement.",
+   "id": "urban_shading_1783691476995",
+   "x": 527.97,
+   "y": 706.89
+  },
+  {
+   "label": "Urban heat island (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "urban_heat_island_1783691669581",
+   "x": 564.06,
+   "y": 514.59
+  },
+  {
+   "label": "Roof albedo",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "roof_albedo_1783971375925",
+   "x": 522.09,
+   "y": 608.32
+  },
+  {
+   "label": "Built-up density",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "builtup_density_1783972052437",
+   "x": 609.72,
+   "y": 631.88
+  },
+  {
+   "label": "Availability of AC",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "residential_ac_1783972390698",
+   "x": 258.87,
+   "y": 497.25
+  },
+  {
+   "label": "Open and green spaces",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "urban_green_space_1783975679485",
+   "x": 525,
+   "y": 874.59
+  },
+  {
+   "label": "Canopy cover",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "canopy_cover_1783976122542",
+   "x": 343.31,
+   "y": 806.65
+  },
+  {
+   "label": "Pedestrian flow",
+   "subsystem": "Transportation",
+   "description": "",
+   "id": "travel_demand_1783977131621",
+   "x": 690.54,
+   "y": 649.45
+  },
+  {
+   "label": "Urban services",
+   "subsystem": "Economy",
+   "description": "",
+   "id": "urban_services_1783977147881",
+   "x": 714.73,
+   "y": 743.83
+  },
+  {
+   "label": "Cooling adaptation (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "outdoor_cooling_amenities_1783977662140",
+   "x": 509.35,
+   "y": 429.92
+  },
+  {
+   "label": "Distance to cooling showers",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_showers_1784135645729",
+   "x": 295.63,
+   "y": 414.85
+  },
+  {
+   "label": "Distance to cooling fountains",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_fountains_1784135670746",
+   "x": 361.68,
+   "y": 617.51
+  },
+  {
+   "label": "Land surface temperature",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "outdoor_air_temperature_1784135714029",
+   "x": 587.94,
+   "y": 789.57
+  },
+  {
+   "label": "Aged population",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "age_1784139208967",
+   "x": 677.93,
+   "y": 94.49
+  },
+  {
+   "label": "Obesity",
+   "subsystem": "Health",
+   "description": "",
+   "id": "obesity_1784144593189",
+   "x": 564.45,
+   "y": -89.45
+  },
+  {
+   "label": "Diabetes",
+   "subsystem": "Health",
+   "description": "",
+   "id": "diabetes_1784144610360",
+   "x": 499.12,
+   "y": 82.51
+  },
+  {
+   "label": "Depression",
+   "subsystem": "Health",
+   "description": "",
+   "id": "mental_distress_1784144798177",
+   "x": 709.63,
+   "y": -111.67
+  },
+  {
+   "label": "Arthritis",
+   "subsystem": "Health",
+   "description": "",
+   "id": "arthritis_1784144884850",
+   "x": 287,
+   "y": 120.38
+  },
+  {
+   "label": "Social isolation",
+   "subsystem": "Social",
+   "description": "",
+   "id": "social_isolation_1784145027768",
+   "x": 852.07,
+   "y": 123.93
+  },
+  {
+   "label": "Smoking",
+   "subsystem": "Health",
+   "description": "",
+   "id": "smoking_1784145054055",
+   "x": 395.57,
+   "y": 91.23
+  },
+  {
+   "label": "Binge drinking",
+   "subsystem": "Health",
+   "description": "",
+   "id": "binge_drinking_1784145064780",
+   "x": 503.84,
+   "y": -178.2
+  },
+  {
+   "label": "Asthma",
+   "subsystem": "Health",
+   "description": "",
+   "id": "asthma_1784146206133",
+   "x": 333.71,
+   "y": 271.04
+  },
+  {
+   "label": "High blood pressure",
+   "subsystem": "Health",
+   "description": "",
+   "id": "high_blood_pressure_1784146238633",
+   "x": 473.62,
+   "y": -74.78
+  },
+  {
+   "label": "High cholesterol",
+   "subsystem": "Health",
+   "description": "",
+   "id": "high_cholesterol_1784146261641",
+   "x": 531.76,
+   "y": -3.49
+  },
+  {
+   "label": "COPD",
+   "subsystem": "Health",
+   "description": "",
+   "id": "copd_1784146295982",
+   "x": 355.59,
+   "y": 181.68
+  },
+  {
+   "label": "Heart disease",
+   "subsystem": "Health",
+   "description": "",
+   "id": "heart_disease_1784146425621",
+   "x": 453.73,
+   "y": 162.5
+  },
+  {
+   "label": "Stroke",
+   "subsystem": "Health",
+   "description": "",
+   "id": "stroke_1784146459095",
+   "x": 440.96,
+   "y": 11.24
+  },
+  {
+   "label": "Short sleep duration",
+   "subsystem": "Health",
+   "description": "",
+   "id": "short_sleep_duration_1784146681104",
+   "x": 628.01,
+   "y": -15.97
+  },
+  {
+   "label": "Physical Disabilities",
+   "subsystem": "Health",
+   "description": "",
+   "id": "disability_1784147651024",
+   "x": 384.66,
+   "y": 356.05
+  },
+  {
+   "label": "Utilities insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "utilities_threat_1784147785218",
+   "x": 882.71,
+   "y": 234.37
+  },
+  {
+   "label": "Food insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "food_insecurity_1784147824522",
+   "x": 915.05,
+   "y": 554.12
+  },
+  {
+   "label": "Housing insecurity",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "housing_insecurity_1784147837698",
+   "x": 948.52,
+   "y": 298.65
+  },
+  {
+   "label": "Transport inaccessibility",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "lack_of_transport_access_1784147873769",
+   "x": 882.53,
+   "y": 362.78
+  },
+  {
+   "label": "Overcrowding",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "overcrowding_1784147903969",
+   "x": 847.35,
+   "y": 619.01
+  },
+  {
+   "label": "Poverty",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "persons_living_below_poverty_line_1784148138406",
+   "x": 615.29,
+   "y": 161.85
+  },
+  {
+   "label": "Unemployment",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "unemployment_1784148264572",
+   "x": 965.57,
+   "y": 405.21
+  },
+  {
+   "label": "Physiological vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "physical_distress_1784157119521",
+   "x": 570.66,
+   "y": 315.88
+  },
+  {
+   "label": "Social vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "social_determinants_of_health_1784157194812",
+   "x": 692.57,
+   "y": 328.28
+  },
+  {
+   "label": "Distance to cooling sites",
+   "subsystem": "Infrastructure",
+   "description": "",
+   "id": "availability_of_cooling_sites_1784852908319",
+   "x": 276.68,
+   "y": 561.56
+  },
+  {
+   "label": "Psychological vulnerability (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "psychological_vulnerability_c_1784852956727",
+   "x": 746.56,
+   "y": 163.56
+  },
+  {
+   "label": "Human co-location (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "human_colocation_c_1784853411566",
+   "x": 654.63,
+   "y": 539.69
+  },
+  {
+   "label": "Cancer",
+   "subsystem": "Health",
+   "description": "",
+   "id": "cancer_1784855214074",
+   "x": 589.92,
+   "y": 67.78
+  },
+  {
+   "label": "Median income",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "median_income_1785006491072",
+   "x": 534.68,
+   "y": 206.17
+  },
+  {
+   "label": "Young children",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "young_children_1785006681071",
+   "x": 895.08,
+   "y": 464.32
+  },
+  {
+   "label": "Air pollution (C)",
+   "subsystem": "Others",
+   "description": "",
+   "id": "air_quality_c_1785013070233",
+   "x": 689.31,
+   "y": 467.8
+  },
+  {
+   "label": "PM2.5",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "pm25_1785013100042",
+   "x": 740.18,
+   "y": 545.54
+  },
+  {
+   "label": "NO2",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "no2_1785013145334",
+   "x": 814.23,
+   "y": 508.18
+  },
+  {
+   "label": "Heat emergency",
+   "subsystem": "Health",
+   "description": "",
+   "id": "heat_emergency_1785298152221",
+   "x": 616.2,
+   "y": 420.09
+  },
+  {
+   "label": "Canopy height",
+   "subsystem": "Environment",
+   "description": "",
+   "id": "canopy_height_1785373909757",
+   "x": 387.61,
+   "y": 721.04
+  },
+  {
+   "label": "Median age",
+   "subsystem": "Demographics",
+   "description": "",
+   "id": "median_age_1785373973261",
+   "x": 356.16,
+   "y": -57.48
+  }
+ ],
+ "links": [
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "availability_of_urban_greenery_1783690972981",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "roof_albedo_1783971375925",
+   "target": "urban_heat_island_1783691669581",
+   "polarity": "-",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "builtup_density_1783972052437",
+   "target": "urban_heat_island_1783691669581",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "builtup_density_1783972052437",
+   "target": "urban_shading_1783691476995",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "availability_of_urban_greenery_1783690972981",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "canopy_cover_1783976122542",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "canopy_cover_1783976122542",
+   "target": "availability_of_urban_greenery_1783690972981",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "number_of_trees_1783691403332",
+   "target": "urban_green_space_1783975679485",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "availability_of_cooling_showers_1784135645729",
+   "target": "outdoor_cooling_amenities_1783977662140",
+   "polarity": "-",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "availability_of_cooling_fountains_1784135670746",
+   "target": "outdoor_cooling_amenities_1783977662140",
+   "polarity": "-",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "outdoor_air_temperature_1784135714029",
+   "target": "urban_heat_island_1783691669581",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "availability_of_urban_greenery_1783690972981",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "high_blood_pressure_1784146238633",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "overcrowding_1784147903969",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "unemployment_1784148264572",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "diabetes_1784144610360",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "heart_disease_1784146425621",
+   "target": "physical_distress_1784157119521",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Cardiac prevalence and the HVI diverge at tract scale; the index contains no health term.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "arthritis_1784144884850",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "high_cholesterol_1784146261641",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "stroke_1784146459095",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "copd_1784146295982",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "obesity_1784144593189",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "asthma_1784146206133",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "disability_1784147651024",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "availability_of_cooling_sites_1784852908319",
+   "target": "outdoor_cooling_amenities_1783977662140",
+   "polarity": "-",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "social_isolation_1784145027768",
+   "target": "psychological_vulnerability_c_1784852956727",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "travel_demand_1783977131621",
+   "target": "human_colocation_c_1784853411566",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "urban_services_1783977147881",
+   "target": "travel_demand_1783977131621",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "residential_ac_1783972390698",
+   "target": "outdoor_cooling_amenities_1783977662140",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Same compositional inversion as binge drinking and blood pressure. Ecological association r = -0.85.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "asthma_1784146206133",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Short sleep at tract scale is a deprivation marker (r = -0.58 with income, +0.52 with poverty). Ecological association r = -0.71.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "short_sleep_duration_1784146681104",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "mental_distress_1784144798177",
+   "target": "psychological_vulnerability_c_1784852956727",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "stroke_1784146459095",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Same compositional inversion. Ecological association r = -0.52.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "cancer_1784855214074",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Same compositional inversion, weaker. Ecological association r = -0.28.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "copd_1784146295982",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "arthritis_1784144884850",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "smoking_1784145054055",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "binge_drinking_1784145064780",
+   "target": "mental_distress_1784144798177",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "food_insecurity_1784147824522",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "utilities_threat_1784147785218",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "lack_of_transport_access_1784147873769",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "housing_insecurity_1784147837698",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Higher income lowers social vulnerability; drawn polarity was an error.",
+   "evidence": "sign corrected against data (strong)"
+  },
+  {
+   "source": "young_children_1785006681071",
+   "target": "social_determinants_of_health_1784157194812",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "urban_green_space_1783975679485",
+   "target": "builtup_density_1783972052437",
+   "polarity": "-",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "cancer_1784855214074",
+   "target": "physical_distress_1784157119521",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "pm25_1785013100042",
+   "target": "air_quality_c_1785013070233",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "no2_1785013145334",
+   "target": "air_quality_c_1785013070233",
+   "polarity": "+",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "smoking_1784145054055",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "age_1784139208967",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "diabetes_1784144610360",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "smoking_1784145054055",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "cancer_1784855214074",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "median_income_1785006491072",
+   "target": "heart_disease_1784146425621",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "smoking_1784145054055",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "short_sleep_duration_1784146681104",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "cancer_1784855214074",
+   "polarity": "-",
+   "label": "decreases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "persons_living_below_poverty_line_1784148138406",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": "Neighbourhood composition. Drawn because omitting it reversed the sign of an edge into this node: adjusting for age and income structure restores the expected direction. Polarity taken from the ecological association, not assumed.",
+   "evidence": "confounder added after sign review"
+  },
+  {
+   "source": "physical_distress_1784157119521",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "psychological_vulnerability_c_1784852956727",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "outdoor_cooling_amenities_1783977662140",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "-",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "human_colocation_c_1784853411566",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "availability_of_urban_greenery_1783690972981",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "canopy_height_1785373909757",
+   "target": "canopy_cover_1783976122542",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "binge_drinking_1784145064780",
+   "polarity": "-",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "obesity_1784144593189",
+   "polarity": "+",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "high_blood_pressure_1784146238633",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "diabetes_1784144610360",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "heart_disease_1784146425621",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "arthritis_1784144884850",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "stroke_1784146459095",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "high_cholesterol_1784146261641",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "median_age_1785373973261",
+   "target": "copd_1784146295982",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "urban_shading_1783691476995",
+   "target": "outdoor_air_temperature_1784135714029",
+   "polarity": "-",
+   "label": "decreases",
+   "description": ""
+  },
+  {
+   "source": "urban_heat_island_1783691669581",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "air_quality_c_1785013070233",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  },
+  {
+   "source": "social_determinants_of_health_1784157194812",
+   "target": "heat_emergency_1785298152221",
+   "polarity": "+",
+   "label": "increases",
+   "description": ""
+  }
+ ],
+ "loops": [],
+ "meta": {
+  "scope": "ecological",
+  "unit": "neighbourhood / census tract aggregated to a 250 m grid",
+  "note": "Polarities describe associations between *places*, not mechanisms within persons. Several behaviour-to-disease links are drawn with the opposite sign to their individual-level mechanism because tract-level behaviour prevalence proxies neighbourhood composition. Each such edge carries a description explaining what it proxies at this scale."
+ }
+}
