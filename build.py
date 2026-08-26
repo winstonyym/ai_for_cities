@@ -758,7 +758,7 @@ def build_person(p, prev_p, next_p):
         quote = f"""
         <blockquote class="pullquote glass" style="margin-top:34px">
           &ldquo;{p['quote']}&rdquo;
-          <footer>{p['name']}, in his own words</footer>
+          <footer>{p['name']}</footer>
         </blockquote>"""
 
     focus = "".join(f'<span class="pill">{f}</span>' for f in p["focus"])
