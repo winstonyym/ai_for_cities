@@ -182,7 +182,7 @@ PEOPLE = [
         role="Digital Intelligence Team",
         group="team",
         group_label="Research Team",
-        affil="B.S. Electrical and Computer Engineering (intended)",
+        affil="B.S. Electrical and Computer Engineering  ",
         affil2="Cornell Duffield Engineering",
         bio=[
             "Andrew Wu leads the digital twin workstream, building the 3D city "
