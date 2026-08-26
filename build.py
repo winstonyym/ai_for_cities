@@ -53,11 +53,11 @@ PEOPLE = [
         slug="winston-yap",
         name="Winston Yap",
         short="Winston Yap",
-        role="Lead",
+        role="Project Lead",
         group="team",
         group_label="Research Team",
-        affil="Project Lead, AI for Cities",
-        affil2="Systems Engineering · Cornell Duffield Engineering",
+        affil="Ezra Systems Postdoctoral Fellow, Systems Engineering",
+        affil2="Cornell Duffield Engineering",
         bio=[
            "Winston Yap is an Ezra Systems Postdoctoral Associate at Cornell University and Overseas Postdoctoral Fellow at the Singapore Management University, College of Integrative Studies. His research combines urban analytics, systems thinking, and artificial intelligence to model cities as complex systems and support sustainable urban planning and design.",
            "He holds a doctorate in urban analytics from the National University of Singapore. His work has been published in leading urban science journals including Nature Health, Nature Sustainability, npj Urban Sustainability, and Computers, Environment and Urban Systems. He was awarded the Singapore Data Science Consortium Dissertation Fellowship, and his research on population health has been featured by MIT News. His work is informed by interdisciplinary experiences spanning academia, industry, and urban practice, including applied urban research at the Lee Kuan Yew Centre for Innovative Cities, industry experience as a machine learning engineer at a self-driving car startup in Nagoya (Japan), and a visiting scholarship at the MIT Senseable City Lab (Boston)."
@@ -69,7 +69,7 @@ PEOPLE = [
               ("Email", '<a href="mailto:winyap@cornell.edu">winyap@cornell.edu</a>'),
               ("Address", "313 Campus Rd, Ithaca, NY 14853")],
         links=[("Google Scholar", "https://scholar.google.com/citations?user=p14e60QAAAAJ"),
-               ("GitHub", "https://github.com/winstonyym"),
+               ("Personal Site", "https://www.winstonyym.com"),
                ("Urbanity", "https://github.com/winstonyym/urbanity")],
     ),
     dict(
@@ -136,7 +136,7 @@ PEOPLE = [
         slug="krishiv-vora",
         name="Krishiv Vora",
         short="Krishiv Vora",
-        role="Urban Automation Team",
+        role="Urban AI Automation Team",
         group="team",
         group_label="Research Team",
         affil="M.Eng. Computer Science",
@@ -168,7 +168,7 @@ PEOPLE = [
         role="Digital Intelligence Team",
         group="team",
         group_label="Research Team",
-        affil="B.S. Electrical and Computer Engineering  ",
+        affil="B.S. Electrical and Computer Engineering",
         affil2="Cornell Duffield Engineering",
         bio=[
             "Andrew Wu leads the digital twin workstream, building the 3D city "
@@ -214,6 +214,20 @@ THEMES = [
 ]
 
 URIS_URL = "https://www.urismapper.com/"
+
+# Landing-page toggles. False keeps the markup in the output but wrapped in an
+# HTML comment, which is how these blocks were switched off by hand.
+SHOW_HERO_STATS = False    # the four-number strip under the hero buttons
+SHOW_THEME_LEADS = False   # the "lead" link at the foot of each research card
+
+
+def maybe(flag, block):
+    """Return block as-is, or commented out in place, depending on flag."""
+    if flag:
+        return block
+    indent = block[:len(block) - len(block.lstrip())]
+    return indent + "<!-- " + block.lstrip() + " -->"
+
 
 INTERVENTIONS = [
     ("#8ab17d", "Plant street trees",
@@ -392,10 +406,7 @@ def heatscape_card(base, featured=False):
           <span class="pill">Urban heat</span>
         </div>
         <h3 class="h2">Heatscape NYC</h3>
-        <p class="lede">A 250-metre grid over New York City that scores every populated
-          cell for heat risk across 43 indicators, then matches it to the cooling
-          intervention its context actually supports — and shows the causal path it took
-          to get there.</p>
+        <p class="lede">High-resolution crowdsourced insight into extreme heat vulnerability across New York City.  250-metre grid cells score heat risk and system dynamics across 43 indicators.</p>
         <div class="hero__actions" style="margin-top:8px">
           <a class="btn btn--primary" href="{base}projects/heatscape.html">Project overview <span class="btn__arrow">&rarr;</span></a>
           <a class="btn btn--ghost" href="{base}projects/heatscape/index.html">Open the app <span class="btn__arrow">&rarr;</span></a>
@@ -435,10 +446,7 @@ def urismapper_card(base, featured=False):
           <span class="pill">System dynamics</span>
         </div>
         <h3 class="h2">URIS Mapper</h3>
-        <p class="lede">A browser-based platform for building and interrogating causal
-          loop diagrams. It finds the reinforcing and balancing loops in a map for you,
-          filters the structure by subsystem, and answers questions about what is
-          currently on screen.</p>
+        <p class="lede">A human-AI online platform leveraging knowledge graph retrieval for interdisciplinary urban intelligence and systems mapping.</p>
         <div class="hero__actions" style="margin-top:8px">
           <a class="btn btn--primary" href="{URIS_URL}" target="_blank" rel="noopener">Open URIS Mapper <span class="btn__arrow">&#8599;</span></a>
         </div>
@@ -469,14 +477,26 @@ def urismapper_card(base, featured=False):
 
 def build_home():
     base = ""
+
+    hero_stats_html = maybe(SHOW_HERO_STATS, """        <div class="hero__stats">
+          <div class="stat"><div class="stat__n"><span data-count="10081">0</span></div><div class="stat__l">populated 250&nbsp;m cells scored</div></div>
+          <div class="stat"><div class="stat__n"><span data-count="43">0</span></div><div class="stat__l">urban indicators per cell</div></div>
+          <div class="stat"><div class="stat__n"><span data-count="95">0</span></div><div class="stat__l">edges in the causal model</div></div>
+          <div class="stat"><div class="stat__n"><span data-count="6">0</span></div><div class="stat__l">researchers, four disciplines</div></div>
+        </div>""")
+
+    def lead_link(t):
+        return maybe(SHOW_THEME_LEADS,
+            '''        <div style="margin-top:auto;padding-top:20px">
+          <a class="link-arrow" href="%speople/%s.html">%s <span aria-hidden="true">&rarr;</span></a>
+        </div>''' % (base, t["lead"], PEOPLE_BY_SLUG[t["lead"]]["short"]))
+
     themes = "\n".join(f"""      <article class="theme-card glass" data-glow>
         <span class="theme-card__glow" style="background:{t['color']}"></span>
         <div class="theme-card__n">{t['n']}</div>
         <h3>{t['title']}</h3>
         <p>{t['body']}</p>
-        <div style="margin-top:auto;padding-top:20px">
-          <a class="link-arrow" href="{base}people/{t['lead']}.html">{PEOPLE_BY_SLUG[t['lead']]['short']} <span aria-hidden="true">&rarr;</span></a>
-        </div>
+{lead_link(t)}
       </article>""" for t in THEMES)
 
     marquee_items = [
@@ -521,12 +541,7 @@ def build_home():
           <a class="btn btn--ghost" href="people/index.html">Meet the team <span class="btn__arrow">&rarr;</span></a>
         </div>
 
-        <div class="hero__stats">
-          <div class="stat"><div class="stat__n"><span data-count="10081">0</span></div><div class="stat__l">populated 250&nbsp;m cells scored</div></div>
-          <div class="stat"><div class="stat__n"><span data-count="43">0</span></div><div class="stat__l">urban indicators per cell</div></div>
-          <div class="stat"><div class="stat__n"><span data-count="95">0</span></div><div class="stat__l">edges in the causal model</div></div>
-          <div class="stat"><div class="stat__n"><span data-count="6">0</span></div><div class="stat__l">researchers, four disciplines</div></div>
-        </div>
+{hero_stats_html}
       </div>
     </div>
 
@@ -608,9 +623,8 @@ def build_home():
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="eyebrow">Projects</p>
-        <h2 class="h1">What we have shipped</h2>
-        <p class="lede">Research that ends in a paper is only half done. Every AI4C
-          workstream is expected to produce something a planner can open.</p>
+        <h2 class="h1">Experiential learning</h2>
+        <p class="lede">We work closely with student teams and community partners to build real-world solutions to the most pressing urban challenges</p>
       </div>
 {heatscape_card(base, featured=True)}
       <div style="margin-top:22px">
