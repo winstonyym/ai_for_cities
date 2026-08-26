@@ -59,23 +59,9 @@ PEOPLE = [
         affil="Project Lead, AI for Cities",
         affil2="Systems Engineering · Cornell Duffield Engineering",
         bio=[
-            "Winston Yap leads AI for Cities day to day — setting the research roadmap, "
-            "building the group's modelling and data infrastructure, and mentoring the "
-            "student leads across each workstream.",
-            "He holds a doctorate in urban analytics from the National University of "
-            "Singapore, where his work at the NUS Urban Analytics Lab centred on urban "
-            "analytics and 3D city modelling for the planning process. He is the author of "
-            "<strong>Urbanity</strong>, an open, feature-rich global network dataset and "
-            "toolkit for city-scale analysis, and contributed to <strong>Global "
-            "Streetscapes</strong>, a dataset of ten million street-level images across 688 "
-            "cities, and <strong>VoxCity</strong>, a framework for generating semantic 3D "
-            "city models from open geospatial data. Before his doctorate he was a research "
-            "associate at the Lee Kuan Yew Centre for Innovative Cities, working on "
-            "age-friendly planning and citizen science in Southeast Asian cities.",
-            "At Cornell he built <strong>Heatscape NYC</strong>, the group's first public "
-            "tool: a 250-metre grid over New York City that scores every populated cell for "
-            "heat risk and matches it to the cooling intervention its context actually "
-            "supports.",
+           "Winston Yap is an Ezra Systems Postdoctoral Associate at Cornell University and Overseas Postdoctoral Fellow at the Singapore Management University, College of Integrative Studies. His research combines urban analytics, systems thinking, and artificial intelligence to model cities as complex systems and support sustainable urban planning and design."
+           "He holds a doctorate in urban analytics from the National University of Singapore. His work has been published in leading urban science journals including Nature Health, Nature Sustainability, npj Urban Sustainability, and Computers, Environment and Urban Systems. He was awarded the Singapore Data Science Consortium Dissertation Fellowship, and his research on population health has been featured by MIT News. His work is informed by interdisciplinary experiences spanning academia, industry, and urban practice, including applied urban research at the Lee Kuan Yew Centre for Innovative Cities, industry experience as a machine learning engineer at a self-driving car startup in Nagoya (Japan), and a visiting scholarship at the MIT Senseable City Lab (Boston)."
+          ,
         ],
         focus=["Urban analytics", "Geospatial deep learning", "3D city modelling",
                "Urban digital twins", "Open urban data"],
@@ -693,9 +679,7 @@ def build_home():
 def build_people_index():
     base = "../"
     groups = [("team", "Research Team",
-               "One group, no tiers. Faculty, postdoctoral and student researchers work "
-               "the same problems from different disciplines, and each person owns a piece "
-               "of the work.")]
+               "Interdisciplinary research team spanning urban analytics, transportation, architecture and design, computer science, and systems engineering.")]
     sections = []
     for key, label, blurb in groups:
         cards = "\n".join(person_card(p, base) for p in PEOPLE if p["group"] == key)
@@ -716,9 +700,6 @@ def build_people_index():
     <div class="wrap">
       <div class="crumbs"><a href="{base}index.html">AI for Cities</a><span>/</span>People</div>
       <h1 class="h-display" style="font-size:clamp(2.6rem,6.6vw,4.6rem)">People</h1>
-      <p class="lede" style="max-width:660px;margin-top:22px">Six researchers across systems
-        engineering, computer science, city planning and real estate — one team, each
-        person linked to the projects they work on.</p>
     </div>
   </section>
 
