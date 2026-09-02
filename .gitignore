@@ -10,3 +10,4 @@ WEBSITE.md
 # a classic GitHub Pages build failure
 node_modules/
 .DS_Store
+/documents

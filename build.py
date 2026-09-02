@@ -205,10 +205,31 @@ PEOPLE = [
         focus=["Urban digital twins", "3D city modelling", "Remote sensing",
                "Air quality data", "Simulation"],
         meta=[("Workstream", "Digital twin — 3D city models and simulation"),
-              ("Program", "Engineering, Cornell University"),
+              ("Program", "B.S. Electrical and Computer Engineering, Cornell University"),
               ("Previously", "NASA TEMPO satellite air-quality data analysis")],
         links=[],
     ),
+    dict(
+            slug="troy-wu",
+            name="Troy Wu",
+            short="Troy Wu",
+            role="Urban Digital Twin Team",
+            group="team",
+            group_label="Research Team",
+            affil="M.Eng. Computer Science",
+            affil2="Cornell University",
+            bio=[
+                "Troy Wu is an M.Eng. Computer Science student at Cornell University, working on AI4Cities’ digital urban twin. He is interested in applying AI, machine learning, and software engineering to real-world problems involving cities, infrastructure, and geospatial data.", 
+                "He graduated with a B.S. in Computer Science and a minor in statistics & data science from Loyola Marymount University in 2025. He has also worked on backend and full-stack engineering projects involving data pipelines, optimization, and cloud-based systems. At Cornell, his work has expanded into robot learning, AI, and optimization, with a focus on building practical systems that connect intelligent models with real-world data and applications.",
+            ],
+            quote="My goal is to bridge AI and geospatial data to build intelligent systems that can understand, model, and improve the urban environment."
+                  ,
+            focus=["AI", "Machine Learning", "Software systems", "Optimization", "Data Analytics"],
+            meta=[("Workstream", "Digital Urban Twins - GIS, Spatial Processing, Data analytics & Integration"),
+                  ("Program", "M.Eng. Computer Science, Cornell University"),
+                  ("Previously", "Full-Stack Engineer at Professor Yang’s OpenET Lab")],
+            links=[],
+        ),
 ]
 
 PEOPLE_BY_SLUG = {p["slug"]: p for p in PEOPLE}
