@@ -531,7 +531,7 @@ def build_home():
         return maybe(SHOW_THEME_LEADS,
             '''        <div style="margin-top:auto;padding-top:20px">
           <a class="link-arrow" href="%speople/%s.html">%s <span aria-hidden="true">&rarr;</span></a>
-        </div>''' % (base, t["lead"], PEOPLE_BY_SLUG[t["lead"]]["short"]))
+        </div>''' % (base, t["lead"], ""))
 
     themes = "\n".join(f"""      <article class="theme-card glass" data-glow>
         <span class="theme-card__glow" style="background:{t['color']}"></span>
@@ -884,9 +884,6 @@ def build_projects_index():
         <div class="pill-row" style="margin-bottom:22px"><span class="pill pill--soon">In development</span></div>
         <h3>{t['title']}</h3>
         <p>{t['body']}</p>
-        <div style="margin-top:auto;padding-top:20px">
-          <a class="link-arrow" href="{base}people/{t['lead']}.html">Lead: {PEOPLE_BY_SLUG[t['lead']]['short']} <span aria-hidden="true">&rarr;</span></a>
-        </div>
       </article>""" for t in THEMES)
 
     body = f"""<main id="main">
