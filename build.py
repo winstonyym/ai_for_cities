@@ -272,6 +272,27 @@ PEOPLE = [
                       ("Previously", "AI Engineer Intern at Mybull Intelligence Machinery")],
                 links=[],
             ),
+    dict(
+                slug="evan-zhang",
+                name="Evan Zhang",
+                short="Evan Zhang",
+                role="Urban Automation Team",
+                group="team",
+                group_label="Research Team",
+                affil="M.Eng. Computer Science",
+                affil2="Cornell University",
+                bio=[
+                    "Evan Zhang is an M.Eng Computer Science student at Cornell University, contributing to AI4C’s agentic geospatial workflow. His interests include leveraging LLMs and agentic AI to make a measurable impact on local communities.", 
+                    "Evan graduated with a B.S. in Computer Science and a minor in Statistics, as well as a Public Leadership Scholars citation, from the University of Maryland, College Park. His work revolves around NLP and deep learning, including fine-tuning transformer-based models for cross-domain sentiment classification across social media datasets. Outside of technical work, he was previously a member of the Operations Programs team at Hack4Impact, where he helped incubate new university chapters across the United States and Canada.",
+                ],
+                quote="I’m looking forward to developing geospatial workflows that will make meaningful progresstowards sustainability in urban communities."
+                      ,
+                focus=["AI", "Agents", "LLMs", "Software Systems"],
+                meta=[("Workstream", "Agentic AI - Data Analytics"),
+                      ("Program", "M.Eng. Computer Science, Cornell University"),
+                      ("Previously", "Hack4Impact Operations Programs Team Member")],
+                links=[],
+            ),
     # dict(
     #             slug="aryaman-kumar",
     #             name="Aryaman Kumar",
