@@ -210,6 +210,27 @@ PEOPLE = [
         links=[],
     ),
     dict(
+                slug="latika-sreenath",
+                name="Latika Sreenath",
+                short="Latika Sreenath",
+                role="Urban Automation Team",
+                group="team",
+                group_label="Research Team",
+                affil="M.Eng. Computer Science",
+                affil2="Cornell University",
+                bio=[
+                    "Latika Sreenath works at the intersection of AI, optimization, and user-facing software, with a focus on turning intelligent systems into products that solve practical problems for users.", 
+                    "She is an M.Eng. computer science student at Cornell, focused on building AI-driven systems that are both technically effective and useful in real-world settings. Most recently, she spent the summer at Dell Technologies, where she worked on the PPDM software engineering team and explored how agentic AI and automation can optimize engineering workflows, including developing an agent to streamline parts of the software deployment process. Her experiences have strengthened her interest in combining AI with thoughtful product design and optimization to make complex systems easier and more efficient to use. Outside of academics and engineering, she enjoys playing badminton, drinking coffee, and spending time with friends.",
+                ],
+                quote="I’m looking forward to using AI and geospatial data to build intelligent tools that make complex information more accessible and actionable."
+                      ,
+                focus=["AI", "Optimization", "Product Design", "Intelligent Systems"],
+                meta=[("Workstream", "Agentic AI - Spatial Intelligence, AI Systems"),
+                      ("Program", "B.S. in Computer Science (Minor in AI), M.Eng. Computer Science, Cornell University"),
+                      ("Previously", "Dell Technologies, PPDM Software Engineering Team")],
+                links=[],
+            ),
+    dict(
             slug="troy-wu",
             name="Troy Wu",
             short="Troy Wu",
@@ -285,7 +306,7 @@ PEOPLE = [
                     "Evan Zhang is an M.Eng Computer Science student at Cornell University, contributing to AI4C’s agentic geospatial workflow. His interests include leveraging LLMs and agentic AI to make a measurable impact on local communities.", 
                     "Evan graduated with a B.S. in Computer Science and a minor in Statistics, as well as a Public Leadership Scholars citation, from the University of Maryland, College Park. His work revolves around NLP and deep learning, including fine-tuning transformer-based models for cross-domain sentiment classification across social media datasets. Outside of technical work, he was previously a member of the Operations Programs team at Hack4Impact, where he helped incubate new university chapters across the United States and Canada.",
                 ],
-                quote="I’m looking forward to developing geospatial workflows that will make meaningful progresstowards sustainability in urban communities."
+                quote="I’m looking forward to developing geospatial workflows that will make meaningful progress towards sustainability in urban communities."
                       ,
                 focus=["AI", "Agents", "LLMs", "Software Systems"],
                 meta=[("Workstream", "Agentic AI - Data Analytics"),
